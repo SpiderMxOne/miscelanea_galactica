@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscelánea Galáctica - Don Chema</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .pixel-font { font-family: 'Press Start 2P', monospace; }
+        body { font-family: 'Outfit', sans-serif; background-color: #121212; color: #ffffff; }
+        .neon-glow-yellow { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; }
+        .neon-box { box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); border: 2px solid #FFD700; }
+    </style>
+</head>
+<body class="bg-[#121212] text-white min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navbar -->
+    <header class="p-6 border-b border-[#FFD700]/30 flex justify-between items-center max-w-6xl mx-auto w-full">
+        <div class="flex items-center space-x-3">
+            <span class="pixel-font text-yellow-400 text-xs md:text-sm">🌌 <span data-es="MISCELÁNEA GALÁCTICA" data-en="GALACTIC MISCELLANY">MISCELÁNEA GALÁCTICA</span></span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <nav class="hidden md:space-x-6 md:flex text-sm font-bold">
+                <a href="#features" class="hover:text-yellow-400 transition" data-es="Características" data-en="Features">Características</a>
+                <a href="privacy.html" class="hover:text-gray-400 transition" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+                <a href="terms.html" class="hover:text-gray-400 transition" data-es="Términos" data-en="Terms">Términos</a>
+            </nav>
+            <button onclick="toggleLang()" class="bg-yellow-400 text-black font-black px-3 py-1.5 rounded-lg text-xs pixel-font hover:bg-yellow-300 transition" id="lang-btn">
+                EN 🇺🇸
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="max-w-5xl mx-auto px-6 py-16 text-center">
+        <div class="inline-block bg-purple-900/50 border border-pink-500 rounded-full px-4 py-1 text-xs pixel-font text-pink-400 mb-6" data-es="¡YA DISPONIBLE EN ANDROID!" data-en="NOW AVAILABLE ON ANDROID!">
+            ¡YA DISPONIBLE EN ANDROID!
+        </div>
+        <h1 class="pixel-font text-2xl md:text-4xl lg:text-5xl text-yellow-400 neon-glow-yellow mb-6 leading-relaxed">
+            <span data-es="DON CHEMA Y LA MISCELÁNEA GALÁCTICA" data-en="DON CHEMA & THE GALACTIC MISCELLANY">DON CHEMA Y LA MISCELÁNEA GALÁCTICA</span>
+        </h1>
+        <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10" data-es="Ayuda a Don Chema a surtir los mejores pedidos del Barrio Cósmico en este adictivo juego de puzles Match-3 con sabor retro y espacial." data-en="Help Don Chema fulfill the best orders in the Cosmic Neighborhood in this addictive retro-space Match-3 puzzle game.">
+            Ayuda a Don Chema a surtir los mejores pedidos del Barrio Cósmico en este adictivo juego de puzles Match-3 con sabor retro y espacial.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <a href="#download" class="bg-[#00FF00] text-black font-black px-8 py-4 rounded-xl pixel-font text-xs hover:bg-green-400 transition shadow-lg transform hover:-translate-y-1" data-es="📥 DESCARGAR APK" data-en="📥 DOWNLOAD APK">
+                📥 DESCARGAR APK
+            </a>
+            <a href="#features" class="bg-[#FF00FF] text-black font-black px-8 py-4 rounded-xl pixel-font text-xs hover:bg-pink-400 transition shadow-lg transform hover:-translate-y-1" data-es="✨ VER MÁS" data-en="✨ LEARN MORE">
+                ✨ VER MÁS
+            </a>
+        </div>
+
+        <!-- Features Grid -->
+        <section id="features" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left my-20">
+            <div class="bg-[#1E1E1E] p-6 rounded-2xl neon-box">
+                <div class="text-3xl mb-4">🌮</div>
+                <h3 class="pixel-font text-yellow-400 text-sm mb-2" data-es="30 NIVELES ÉPICOS" data-en="30 EPIC LEVELS">30 NIVELES ÉPICOS</h3>
+                <p class="text-gray-400 text-sm" data-es="Explora misiones desde el Barrio hasta la Expansión Global con obstáculos de salsa y tacos espaciales." data-en="Explore missions from the Neighborhood to Global Expansion with salsa obstacles and space tacos.">Explora misiones desde el Barrio hasta la Expansión Global con obstáculos de salsa y tacos espaciales.</p>
+            </div>
+            <div class="bg-[#1E1E1E] p-6 rounded-2xl neon-box">
+                <div class="text-3xl mb-4">🎵</div>
+                <h3 class="pixel-font text-pink-400 text-sm mb-2" data-es="MÚSICA MULTITRACK" data-en="MULTITRACK MUSIC">MÚSICA MULTITRACK</h3>
+                <p class="text-gray-400 text-sm" data-es="Elige entre Cumbia Galáctica, Rock Galáctico y Electro Galáctico para acompañar tus partidas." data-en="Choose between Galactic Cumbia, Galactic Rock, and Galactic Electro to accompany your matches.">Elige entre Cumbia Galáctica, Rock Galáctico y Electro Galáctico para acompañar tus partidas.</p>
+            </div>
+            <div class="bg-[#1E1E1E] p-6 rounded-2xl neon-box">
+                <div class="text-3xl mb-4">🪅</div>
+                <h3 class="pixel-font text-green-400 text-sm mb-2" data-es="PIÑATA DIARIA" data-en="DAILY PIÑATA">PIÑATA DIARIA</h3>
+                <p class="text-gray-400 text-sm" data-es="Reclama tu racha diaria rompiendo la piñata de la suerte para ganar monedas y boosters especiales." data-en="Claim your daily streak by breaking the lucky piñata to win coins and special boosters.">Reclama tu racha diaria rompiendo la piñata de la suerte para ganar monedas y boosters especiales.</p>
+            </div>
+        </section>
+
+        <!-- Download Banner -->
+        <div id="download" class="bg-gradient-to-r from-purple-900 to-indigo-900 border-2 border-yellow-400 p-8 rounded-3xl my-16">
+            <h2 class="pixel-font text-yellow-400 text-xl mb-4" data-es="¡ÚNETE A LA JORNADA CÓSMICA!" data-en="JOIN THE COSMIC JOURNEY!">¡ÚNETE A LA JORNADA CÓSMICA!</h2>
+            <p class="text-gray-300 mb-6 text-sm" data-es="Descarga la app en tu dispositivo Android y conviértete en la leyenda del barrio." data-en="Download the app on your Android device and become the neighborhood legend.">Descarga la app en tu dispositivo Android y conviértete en la leyenda del barrio.</p>
+            <a href="#" class="inline-block bg-yellow-400 text-black font-black px-8 py-4 rounded-xl pixel-font text-xs hover:bg-yellow-300 transition" data-es="PRÓXIMAMENTE EN GOOGLE PLAY" data-en="COMING SOON ON GOOGLE PLAY">
+                PRÓXIMAMENTE EN GOOGLE PLAY
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#FFD700]/30 py-8 text-center text-xs text-gray-400">
+        <p class="mb-2">© 2025 SpiderMX - Miscelánea Galáctica. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+        <div class="space-x-4">
+            <a href="privacy.html" class="hover:text-yellow-400" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</a>
+            <span>•</span>
+            <a href="terms.html" class="hover:text-yellow-400" data-es="Términos y Condiciones" data-en="Terms & Conditions">Términos y Condiciones</a>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('lang') || 'es';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.getElementById('html-root').setAttribute('lang', lang);
+            document.getElementById('lang-btn').innerText = lang === 'es' ? 'EN 🇺🇸' : 'ES 🇪🇸';
+
+            document.querySelectorAll('[data-es]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.innerText = text;
+            });
+        }
+
+        function toggleLang() {
+            setLanguage(currentLang === 'es' ? 'en' : 'es');
+        }
+
+        // Initialize on load
+        setLanguage(currentLang);
+    </script>
+</body>
+</html>

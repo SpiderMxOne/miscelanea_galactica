@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Miscelánea Galáctica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .pixel-font { font-family: 'Press Start 2P', monospace; }
+        body { font-family: 'Outfit', sans-serif; background-color: #121212; color: #ffffff; }
+    </style>
+</head>
+<body class="bg-[#121212] text-white min-h-screen flex flex-col justify-between">
+
+    <header class="p-6 border-b border-[#FFD700]/30 flex justify-between items-center max-w-4xl mx-auto w-full">
+        <a href="index.html" class="pixel-font text-yellow-400 text-xs" data-es="← VOLVER AL INICIO" data-en="← BACK TO HOME">← VOLVER AL INICIO</a>
+        <button onclick="toggleLang()" class="bg-yellow-400 text-black font-black px-3 py-1.5 rounded-lg text-xs pixel-font hover:bg-yellow-300 transition" id="lang-btn">
+            EN 🇺🇸
+        </button>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <h1 class="pixel-font text-xl md:text-3xl text-yellow-400 mb-6" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</h1>
+        <p class="text-gray-400 text-sm mb-6"><span data-es="Última actualización: Febrero de 2025" data-en="Last update: February 2025">Última actualización: Febrero de 2025</span></p>
+
+        <div class="space-y-6 text-gray-300 text-sm leading-relaxed">
+            <h2 class="text-lg font-bold text-yellow-400" data-es="1. Información que Recopilamos" data-en="1. Information We Collect">1. Información que Recopilamos</h2>
+            <p data-es="Miscelánea Galáctica ('el juego') no recopila información personal identificable directamente de los usuarios. El progreso del juego, las puntuaciones y las monedas se almacenan localmente en su dispositivo mediante bases de datos locales seguras (Room)." data-en="Galactic Miscellany ('the game') does not directly collect personally identifiable information from users. Game progress, scores, and coins are stored locally on your device using secure local databases (Room).">Miscelánea Galáctica ('el juego') no recopila información personal identificable directamente de los usuarios. El progreso del juego, las puntuaciones y las monedas se almacenan localmente en su dispositivo mediante bases de datos locales seguras (Room).</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="2. Publicidad (Google AdMob)" data-en="2. Advertising (Google AdMob)">2. Publicidad (Google AdMob)</h2>
+            <p data-es="Utilizamos el SDK de Google AdMob para mostrar anuncios (incluyendo anuncios premiados). Google AdMob puede utilizar identificadores de publicidad de su dispositivo para mostrar anuncios personalizados según sus intereses. Puede obtener más información sobre cómo Google utiliza los datos en las Políticas de Privacidad de Google Ads." data-en="We use the Google AdMob SDK to display ads (including rewarded ads). Google AdMob may use device advertising identifiers to display personalized ads based on your interests. You can learn more about how Google uses data in the Google Ads Privacy Policy.">Utilizamos el SDK de Google AdMob para mostrar anuncios (incluyendo anuncios premiados). Google AdMob puede utilizar identificadores de publicidad de su dispositivo para mostrar anuncios personalizados según sus intereses. Puede obtener más información sobre cómo Google utiliza los datos en las <a href="https://policies.google.com/technologies/ads" target="_blank" class="text-yellow-400 underline">Políticas de Privacidad de Google Ads</a>.</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="3. Servicios de Google Play Games" data-en="3. Google Play Games Services">3. Servicios de Google Play Games</h2>
+            <p data-es="Si decide iniciar sesión con Google Play Games Services, se pueden sincronizar puntuaciones y logros en las tablas de clasificación globales de acuerdo con los términos de Google." data-en="If you choose to sign in with Google Play Games Services, scores and achievements may be synchronized to global leaderboards in accordance with Google's terms.">Si decide iniciar sesión con Google Play Games Services, se pueden sincronizar puntuaciones y logros en las tablas de clasificación globales de acuerdo con los términos de Google.</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="4. Permisos del Dispositivo" data-en="4. Device Permissions">4. Permisos del Dispositivo</h2>
+            <p data-es="La aplicación puede solicitar permisos básicos necesarios para la reproducción de audio, vibración háptica y notificaciones recordatorias locales del juego." data-en="The application may request basic permissions necessary for audio playback, haptic vibration, and local game reminder notifications.">La aplicación puede solicitar permisos básicos necesarios para la reproducción de audio, vibración háptica y notificaciones recordatorias locales del juego.</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="5. Contacto" data-en="5. Contact">5. Contacto</h2>
+            <p data-es="Si tiene preguntas sobre esta política de privacidad, puede contactarnos a través del repositorio oficial del proyecto en GitHub." data-en="If you have questions about this privacy policy, you can contact us through the official project repository on GitHub.">Si tiene preguntas sobre esta política de privacidad, puede contactarnos a través del repositorio oficial del proyecto en GitHub.</p>
+        </div>
+    </main>
+
+    <footer class="border-t border-[#FFD700]/30 py-6 text-center text-xs text-gray-400">
+        <p>© 2025 SpiderMX - Miscelánea Galáctica.</p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('lang') || 'es';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.getElementById('html-root').setAttribute('lang', lang);
+            document.getElementById('lang-btn').innerText = lang === 'es' ? 'EN 🇺🇸' : 'ES 🇪🇸';
+
+            document.querySelectorAll('[data-es]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.innerText = text;
+            });
+        }
+
+        function toggleLang() {
+            setLanguage(currentLang === 'es' ? 'en' : 'es');
+        }
+
+        setLanguage(currentLang);
+    </script>
+</body>
+</html>

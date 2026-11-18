@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - Miscelánea Galáctica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .pixel-font { font-family: 'Press Start 2P', monospace; }
+        body { font-family: 'Outfit', sans-serif; background-color: #121212; color: #ffffff; }
+    </style>
+</head>
+<body class="bg-[#121212] text-white min-h-screen flex flex-col justify-between">
+
+    <header class="p-6 border-b border-[#FFD700]/30 flex justify-between items-center max-w-4xl mx-auto w-full">
+        <a href="index.html" class="pixel-font text-yellow-400 text-xs" data-es="← VOLVER AL INICIO" data-en="← BACK TO HOME">← VOLVER AL INICIO</a>
+        <button onclick="toggleLang()" class="bg-yellow-400 text-black font-black px-3 py-1.5 rounded-lg text-xs pixel-font hover:bg-yellow-300 transition" id="lang-btn">
+            EN 🇺🇸
+        </button>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <h1 class="pixel-font text-xl md:text-3xl text-yellow-400 mb-6" data-es="Términos y Condiciones" data-en="Terms & Conditions">Términos y Condiciones</h1>
+        <p class="text-gray-400 text-sm mb-6"><span data-es="Última actualización: Febrero de 2025" data-en="Last update: February 2025">Última actualización: Febrero de 2025</span></p>
+
+        <div class="space-y-6 text-gray-300 text-sm leading-relaxed">
+            <h2 class="text-lg font-bold text-yellow-400" data-es="1. Aceptación de los Términos" data-en="1. Acceptance of Terms">1. Aceptación de los Términos</h2>
+            <p data-es="Al descargar, instalar o utilizar Miscelánea Galáctica, usted acepta cumplir y estar sujeto a estos Términos y Condiciones." data-en="By downloading, installing, or using Galactic Miscellany, you agree to comply with and be bound by these Terms and Conditions.">Al descargar, instalar o utilizar Miscelánea Galáctica, usted acepta cumplir y estar sujeto a estos Términos y Condiciones.</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="2. Licencia de Uso" data-en="2. License of Use">2. Licencia de Uso</h2>
+            <p data-es="Se concede al usuario una licencia limitada, no exclusiva, intransferible y revocable para descargar y utilizar el juego con fines de entretenimiento personal y no comercial." data-en="The user is granted a limited, non-exclusive, non-transferable, revocable license to download and use the game for personal, non-commercial entertainment purposes.">Se concede al usuario una licencia limitada, no exclusiva, intransferible y revocable para descargar y utilizar el juego con fines de entretenimiento personal y no comercial.</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="3. Propiedad Intelectual" data-en="3. Intellectual Property">3. Propiedad Intelectual</h2>
+            <p data-es="Todos los derechos de propiedad intelectual, gráficos, música, personajes (como Don Chema) y código fuente de Miscelánea Galáctica pertenecen a SpiderMX. Queda prohibida su reproducción o modificación sin autorización." data-en="All intellectual property rights, graphics, music, characters (such as Don Chema), and source code of Galactic Miscellany belong to SpiderMX. Reproduction or modification without authorization is prohibited.">Todos los derechos de propiedad intelectual, gráficos, música, personajes (como Don Chema) y código fuente de Miscelánea Galáctica pertenecen a SpiderMX. Queda prohibida su reproducción o modificación sin autorización.</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="4. Anuncios y Recompensas" data-en="4. Ads and Rewards">4. Anuncios y Recompensas</h2>
+            <p data-es="El juego ofrece la opción de ver anuncios premiados a cambio de monedas y ventajas virtuales. SpiderMX no se hace responsable de la disponibilidad de los servidores de anuncios de terceros (Google AdMob)." data-en="The game offers the option to watch rewarded ads in exchange for virtual coins and advantages. SpiderMX is not responsible for the availability of third-party ad servers (Google AdMob).">El juego ofrece la opción de ver anuncios premiados a cambio de monedas y ventajas virtuales. SpiderMX no se hace responsable de la disponibilidad de los servidores de anuncios de terceros (Google AdMob).</p>
+
+            <h2 class="text-lg font-bold text-yellow-400" data-es="5. Limitación de Responsabilidad" data-en="5. Limitation of Liability">5. Limitación de Responsabilidad</h2>
+            <p data-es="El juego se proporciona 'tal cual'. SpiderMX no garantiza que la aplicación esté libre de errores o interrupciones en cualquier dispositivo." data-en="The game is provided 'as is'. SpiderMX does not guarantee that the app will be error-free or uninterrupted on any device.">El juego se proporciona 'tal cual'. SpiderMX no garantiza que la aplicación esté libre de errores o interrupciones en cualquier dispositivo.</p>
+        </div>
+    </main>
+
+    <footer class="border-t border-[#FFD700]/30 py-6 text-center text-xs text-gray-400">
+        <p>© 2025 SpiderMX - Miscelánea Galáctica.</p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('lang') || 'es';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.getElementById('html-root').setAttribute('lang', lang);
+            document.getElementById('lang-btn').innerText = lang === 'es' ? 'EN 🇺🇸' : 'ES 🇪🇸';
+
+            document.querySelectorAll('[data-es]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.innerText = text;
+            });
+        }
+
+        function toggleLang() {
+            setLanguage(currentLang === 'es' ? 'en' : 'es');
+        }
+
+        setLanguage(currentLang);
+    </script>
+</body>
+</html>
